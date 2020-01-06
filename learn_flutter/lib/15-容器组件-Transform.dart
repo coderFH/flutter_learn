@@ -4,29 +4,32 @@ import 'dart:math' as math;
 class MyTrans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.all(20),
-          child: MyTransform(),
-        ),
-        Padding(
-          padding: EdgeInsets.all(20),
-          child: MyTranslate(),
-        ),
-        SizedBox(height: 50,),
-        MyRotate(),
-        SizedBox(height: 50,),
-        MyScale(),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('transform'),
+      ),
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: MyTransform(),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: MyTranslate(),
+          ),
+          SizedBox(height: 50,),
+          MyRotate(),
+          SizedBox(height: 50,),
+          MyScale(),
+        ],
+      ),
     );
   }
 }
 class MyTransform extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Center(
         child: Container(
           color: Colors.black,
@@ -47,7 +50,6 @@ class MyTransform extends StatelessWidget {
 class MyTranslate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Colors.red,
@@ -63,7 +65,6 @@ class MyTranslate extends StatelessWidget {
 class MyRotate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return DecoratedBox(
       decoration:BoxDecoration(color: Colors.red),
       child: Transform.rotate(
@@ -78,7 +79,6 @@ class MyRotate extends StatelessWidget {
 class MyScale extends StatelessWidget {
    @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return DecoratedBox(
         decoration:BoxDecoration(color: Colors.red),
         child: Transform.scale(

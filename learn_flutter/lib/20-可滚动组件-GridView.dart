@@ -15,14 +15,20 @@ class MyGridCountDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10,
-        childAspectRatio: 1.0
+    return Scaffold(
+      body: Container(
+        height: 100,
+        child: GridView(
+          scrollDirection : Axis.horizontal,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 1,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            childAspectRatio: 1.5
+          ),
+          children: getGridWidgets(),
+        ),
       ),
-      children: getGridWidgets(),
     );
   }
 }
@@ -40,14 +46,16 @@ class MyGridCountDemo1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 100,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
-          childAspectRatio: 1.0
+    return Scaffold(
+      body: GridView(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 100,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            childAspectRatio: 1.0
+        ),
+        children: getGridWidgets(),
       ),
-      children: getGridWidgets(),
     );
   }
 }
@@ -76,31 +84,33 @@ class _GridViewBuildDemoState extends State<MyGrideViewDemo2> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: ClampingScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
-          childAspectRatio: 1.2
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          shrinkWrap: true,
+          physics: ClampingScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            childAspectRatio: 1.2
+          ),
+          itemCount: anchors.length,
+          itemBuilder: (BuildContext context,int index) {
+            return Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Image.network(anchors[index].imageUrl),
+                  SizedBox(height: 5,),
+                  Text(anchors[index].nickname,style: TextStyle(fontSize: 16),),
+                  Text(anchors[index].roomName,maxLines: 1,overflow: TextOverflow.ellipsis,),
+                ],
+              ),
+            );
+          }
         ),
-        itemCount: anchors.length,
-        itemBuilder: (BuildContext context,int index) {
-          return Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Image.network(anchors[index].imageUrl),
-                SizedBox(height: 5,),
-                Text(anchors[index].nickname,style: TextStyle(fontSize: 16),),
-                Text(anchors[index].roomName,maxLines: 1,overflow: TextOverflow.ellipsis,),
-              ],
-            ),
-          );
-        }
       ),
     );
   }

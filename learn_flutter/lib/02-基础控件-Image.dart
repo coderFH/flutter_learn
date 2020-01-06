@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 class MyImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        MyNetImage(),
-        MyLocalImage(),
-        MyPhotoCircular1(),
-        MyPhotoCircular2(),
-        MyCircularImage(),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('图片控件'),
+      ),
+      body: ListView(
+        children: <Widget>[
+          MyNetImage(),
+          MyLocalImage(),
+          MyPhotoCircular1(),
+          MyPhotoCircular2(),
+          MyCircularImage(),
+        ],
+      ),
     );
   }
 }

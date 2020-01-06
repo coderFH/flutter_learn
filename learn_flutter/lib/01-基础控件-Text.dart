@@ -3,17 +3,22 @@ import 'package:flutter/material.dart';
 class MyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return ListView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('文本控件'),
+      ),
+      body: ListView(
        children: <Widget>[
          MyTextView(),
          MyTextViewRich(),
          MyTextView1(),
          MyDefaultTextStyle(),
        ],
+      ),
     );
   }
 }
+
 class MyTextView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

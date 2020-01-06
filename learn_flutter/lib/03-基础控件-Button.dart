@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
-class MyButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return ListView(
-      children: <Widget>[
-        MyButton2(),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('按钮控件'),
+      ),
+      body: ListView(
+        children: <Widget>[
+          MyButton2(),
+        ],
+      ),
     );
   }
 }

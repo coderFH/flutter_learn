@@ -1,10 +1,27 @@
 import 'package:flutter/material.dart';
 
+class MyRowColumn extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Row-Column'),
+      ),
+      body: Stack(
+        children: <Widget>[
+          MyRow(), 
+          MyRow1(),
+          MyColumn()
+        ],
+      )
+    );
+  }
+}
+
 //============================== 14. Row =============================
 class MyRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Row(
       textDirection: TextDirection.ltr, //是从左往右,还是从右到左
       mainAxisAlignment: MainAxisAlignment.spaceBetween, // mainAxisSize 值为 MainAxisSize.min，则此属性无意义，因为子组件的宽度等于Row的宽度
@@ -24,7 +41,6 @@ class MyRow extends StatelessWidget {
 class MyRow1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -49,7 +65,6 @@ class MyRow1 extends StatelessWidget {
 class MyColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.end,

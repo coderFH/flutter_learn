@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Column(
-      children: <Widget>[
-        HomeContent1(),
-        FormDemo(),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('TextField'),
+      ),
+      body: Column(
+        children: <Widget>[
+          HomeContent1(),
+          FormDemo(),
+        ],
+      ),
     );
   }
 }
@@ -26,7 +30,6 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     //1.设置默认值
@@ -64,7 +67,6 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
 class HomeContent1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       padding: EdgeInsets.all(20),
       child: Column(

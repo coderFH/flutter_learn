@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 class MyCon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        MyContainer(),
-        MyContainer0(),
-        MyContainer1(),
-        MyContainer2(),
-        MyContainer3(),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Container'),
+      ),
+      body:  ListView(
+        children: <Widget>[
+          MyContainer(),
+          MyContainer0(),
+          MyContainer1(),
+          MyContainer2(),
+          MyContainer3(),
+        ],
+      ),
     );
   }
 }
