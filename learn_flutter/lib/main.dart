@@ -28,6 +28,13 @@ import '24-counter.dart';
 import '25-路由-简单的跳转.dart';
 import '26-路由-传递数据.dart';
 import '27-路由-回带数据.dart';
+import '28-maperialapp_appbar.dart';
+import '29-maperialapp_bottomnavigationbar.dart';
+import '30-maperialapp_drawer.dart';
+import '31-maperialapp_scaffold.dart';
+import '32-maperialapp_tabbar.dart';
+import '33-maperialapp_tabbar2.dart';
+import '34-cupertino_loading.dart';
 
 //============================== 1.最原始的写法 ================================
 /*main(List<String> args) {
@@ -186,7 +193,14 @@ class FirstListPage extends StatelessWidget {
           _listViewItem(context,'路由-简单的跳转', '/myrouter'),
           _listViewItem(context,'路由-数据传递', '/myProduct'),
           _listViewItem(context,'路由-回带数据', '/myCallPhone'),
-          
+
+          _newListViewItem(context, 'maperialapp-appbar', MyappBar()),
+          _newListViewItem(context, 'maperialapp_bottomnavigationbar', MybottomNavigationBar()),
+          _newListViewItem(context, 'maperialapp-drawer', MyDrawer()),
+          _newListViewItem(context, 'maperialapp-scaffold', MyScaffold()),
+          _newListViewItem(context, 'maperialapp-tabbar', MyTabbar()),
+          _newListViewItem(context, 'maperialapp-tabbar2', MyTabbar1()),
+          _newListViewItem(context, 'cupertino_loading', MyLoading()),
         ],
       ),
     );
@@ -199,6 +213,17 @@ class FirstListPage extends StatelessWidget {
       trailing: Icon(Icons.arrow_right),
       onTap: (){
         Navigator.pushNamed(context, routeUrl);
+      },
+    );
+  }
+
+  Widget _newListViewItem(BuildContext context,String name,Object w) {
+    return ListTile(
+      leading: Icon(Icons.access_time,size: 18,),
+      title: Text(name),
+      trailing: Icon(Icons.arrow_right),
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => w));
       },
     );
   }
