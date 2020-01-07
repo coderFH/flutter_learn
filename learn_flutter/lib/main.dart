@@ -25,6 +25,9 @@ import '22-可滚动组件-CustomScrollView.dart';
 import '23-可滚动组件-滚动监听.dart';
 import '24-状态管理-Provide.dart';
 import '24-counter.dart';
+import '25-路由-简单的跳转.dart';
+import '26-路由-传递数据.dart';
+import '27-路由-回带数据.dart';
 
 //============================== 1.最原始的写法 ================================
 /*main(List<String> args) {
@@ -130,6 +133,9 @@ class MyApp extends StatelessWidget {
         '/scrollListen1' : (BuildContext context) => MyHomePage(),
         '/scrollListen2' : (BuildContext context) => MyHomeNotificationDemo(),
         '/provide' : (BuildContext context) => CartPage(),
+        '/myrouter' : (BuildContext context) => FirstScreen(),
+        '/myProduct' : (BuildContext context) => ProductList(),
+        '/myCallPhone' : (BuildContext context) => FirstPage(),
       },
       home: FirstListPage(),
     );
@@ -177,6 +183,10 @@ class FirstListPage extends StatelessWidget {
           _listViewItem(context,'可滚动组件-滚动监听', '/scrollListen1'),
           _listViewItem(context,'可滚动组件-滚动监听-NotificationListener', '/scrollListen2'),
           _listViewItem(context,'状态管理-provide', '/provide'),
+          _listViewItem(context,'路由-简单的跳转', '/myrouter'),
+          _listViewItem(context,'路由-数据传递', '/myProduct'),
+          _listViewItem(context,'路由-回带数据', '/myCallPhone'),
+          
         ],
       ),
     );
