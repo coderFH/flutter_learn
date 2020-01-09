@@ -106,7 +106,6 @@ class MyTextView1 extends StatelessWidget {
 class MyDefaultTextStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return DefaultTextStyle(
       //1.设置文本默认样式
       style: TextStyle(
