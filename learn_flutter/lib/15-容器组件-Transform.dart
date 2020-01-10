@@ -33,15 +33,15 @@ class MyTransform extends StatelessWidget {
     return Center(
         child: Container(
           color: Colors.black,
-          child: Transform(
-            alignment: Alignment.topRight,//相对于坐标系原点的对齐方式
-            // transform: Matrix4.skewY(0.3),//沿Y轴倾斜0.3弧度
-            child: Container(
-              padding: EdgeInsets.all(8.0),
-              color: Colors.orange,
-              child: Text("我旋转了"),
-            ),
-          ),
+          // child: Transform(
+          //   alignment: Alignment.topRight,//相对于坐标系原点的对齐方式
+          //   // transform: Matrix4.skewY(0.3),//沿Y轴倾斜0.3弧度
+          //   child: Container(
+          //     padding: EdgeInsets.all(8.0),
+          //     color: Colors.orange,
+          //     child: Text("我旋转了"),
+          //   ),
+          // ),
         ),
     );
   }
