@@ -39,7 +39,7 @@ class MyContainer extends StatelessWidget {
             )
           ]
       ),
-      transform: Matrix4.rotationZ(.2), //卡片倾斜变换
+      // transform: Matrix4.rotationZ(.2), //卡片倾斜变换
       alignment: Alignment.center, //卡片内文字居中
       child: Text( //卡片文字
         "5.20", style: TextStyle(color: Colors.white, fontSize: 40.0),
