@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/35-showDialog.dart';
 import 'package:provider/provider.dart';
 import '01-基础控件-Text.dart';
 import '02-基础控件-Image.dart';
@@ -199,6 +200,8 @@ class FirstListPage extends StatelessWidget {
           _newListViewItem(context, 'maperialapp-tabbar', MyTabbar()),
           _newListViewItem(context, 'maperialapp-tabbar2', MyTabbar1()),
           _newListViewItem(context, 'cupertino_loading', MyLoading()),
+
+          _newListViewItem(context, 'showDialog', MyDialog()),
         ],
       ),
     );
