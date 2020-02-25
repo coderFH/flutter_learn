@@ -1,6 +1,7 @@
 import 'dart:io';
 
 main(List<String> args) {
+  //1.明确的声明
   String name = 'wfh';
   int age = 18;
   double height = 1.89;
@@ -11,7 +12,8 @@ main(List<String> args) {
   content = "hello world";
   // content = 111; // 错误的, 将一个int值赋值给一个String变量
 
-  //2.----- var的使用
+  //2.类型推导  var/final/const
+  //----- var的使用
   var name1 = "wfh";
   name1 = "fhwang";
   print(name1.runtimeType); //String
