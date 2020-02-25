@@ -26,10 +26,4 @@ main(List<String> args) {
     default:
       print('其他方向');
   }
-
-
-
-
-
-
 } 

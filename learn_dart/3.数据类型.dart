@@ -61,19 +61,9 @@ main(List<String> args) {
   var height1 = 1.88;
   print('my name is ${name}, age is $age1, height is $height1');
 
-            
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
+    // 强调: ${变量}, 那么{}可以省略
+  var message = "my name is $name, age is $age1, height is $height1";
+  var message2 = "name is $name, type is ${name.runtimeType}";
+  print(message);
+  print(message2);
 }
