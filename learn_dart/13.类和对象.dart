@@ -11,7 +11,7 @@ main(List<String> args) {
   var p = new Person(); // 直接使用Person()也可以创建
 
     // 2.给对象的属性赋值
-    p.name = 'why';
+    p.name = 'wfh';
 
     // 3.调用对象的方法
     p.eat();

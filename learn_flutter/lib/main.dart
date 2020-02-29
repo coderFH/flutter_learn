@@ -37,6 +37,23 @@ import '32-maperialapp_tabbar.dart';
 import '33-maperialapp_tabbar2.dart';
 import '34-cupertino_loading.dart';
 
+/*
+* 运行一个Flutter项目:
+* 1.冷启动(从零启动1m-5m)
+* 2.热重载(最主要是执行build方法)
+* 3.热重启(重新运行整个APP)
+*
+*
+* 进去Flutter的widget的源码中,我们会看到一些使用@required修饰的可选参数
+* 被这个修饰的属性,是必须赋值的
+* 那为什么不传成必传参数,而是放入命名可选参数中呢?
+* 因为这样就可以不用按照必须的顺序去传参,我传参的顺序可以是无序的
+*
+*
+* android/ios 命令式编程 - 没有状态一说,有的就是属性-数据
+* vue-react-angular 声明式编程(只需要管理好状态就可以)
+* */
+
 //============================== 1.最原始的写法 ================================
 /*main(List<String> args) {
   runApp(MaterialApp(

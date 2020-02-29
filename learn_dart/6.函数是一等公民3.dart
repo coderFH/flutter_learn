@@ -14,7 +14,7 @@ main(List<String> args) {
 
 // 封装test函数, 要求: 传入一个函数
 // void test(Function foo) {
-//   foo("why");
+//   foo("wfh");
 // }
 
 typedef Calculate = int Function(int num1, int num2);

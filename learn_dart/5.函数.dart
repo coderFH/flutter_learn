@@ -37,20 +37,20 @@ printInfo4(String name, {int age = 28, double height=1.75}) {
 
 main(List<String> args) {
   // 调用printInfo1函数
-  printInfo1('why'); // name=why age=null height=null
-  printInfo1('why', age: 18); // name=why age=18 height=null
-  printInfo1('why', age: 18, height: 1.88); // name=why age=18 height=1.88
-  printInfo1('why', height: 1.88); // name=why age=null height=1.88
+  printInfo1('wfh'); // name=wfh age=null height=null
+  printInfo1('wfh', age: 18); // name=wfh age=18 height=null
+  printInfo1('wfh', age: 18, height: 1.88); // name=wfh age=18 height=1.88
+  printInfo1('wfh', height: 1.88); // name=wfh age=null height=1.88
 
   //位置可选参数的演示:
   // 调用printInfo2函数
-  printInfo2('why'); // name=why age=null height=null
-  printInfo2('why', 18); // name=why age=18 height=null
-  printInfo2('why', 18, 1.88); // name=why age=18 height=1.88
+  printInfo2('wfh'); // name=wfh age=null height=null
+  printInfo2('wfh', 18); // name=wfh age=18 height=null
+  printInfo2('wfh', 18, 1.88); // name=wfh age=18 height=1.88
 
-  // printInfo3("why",address: "北京");
+  // printInfo3("wfh",address: "北京");
 
-  printInfo4("why");
+  printInfo4("wfh");
 }
 
 

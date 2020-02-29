@@ -1,7 +1,7 @@
 main(List<String> args) {
   // 1.创建Person对象
-  var p = Person.withNameAgeHeight("why", 18, 1.88);
-  // print(p.toString());
+  var p = Person.withNameAgeHeight("wfh", 18, 1.88);
+  print(p.toString());
 
   var p1 = Person.fromMap({
     "name": "lilei",
@@ -16,12 +16,12 @@ main(List<String> args) {
   // Object调用方法时, 编译时会报错
   // dynamic调用方法时, 编译时不报错, 但是运行时会存在安全隐患
 
-  // Object obj = "why";
-  // print(obj.substring(1));
+  // Object obj = "wfh";
+  // print(obj.substring(1)); //会报错
 
   // 明确声明
   // dynamic obj = 123;
-  // print(obj.substring(1));
+  // print(obj.substring(1));  //虽然不报错了,但是123并不是字符串类型,调用字符串的方法会崩溃,所以存在安全隐患
 }
 
 class Person {
