@@ -16,20 +16,20 @@ main(List<String> args) {
   print(name2); // 当name2初始化为kobe时，结果为kobe，当初始化为null时，赋值了jam
 
   //条件运算符：
-  // var temp = 'why';
+  // var temp = 'wfh';
   var temp = null;
   var name = temp ?? 'kobe';
   print(name);
 
   //级联语法
   final p1 = Person();
-  p1.name = 'why';
+  p1.name = 'wfh';
   p1.run();
   p1.eat();
   p1.swim();
 
   final p2 = Person()
-              ..name = "why"
+              ..name = "wfh"
               ..run()
               ..eat()
               ..swim();

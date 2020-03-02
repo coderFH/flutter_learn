@@ -4,7 +4,7 @@ main(List<String> args) {
     print(i);
   }
 
-  var names = ['why', 'kobe', 'curry'];
+  var names = ['wfh', 'kobe', 'curry'];
   for (var name in names) {
     print(name);
   }
@@ -26,10 +26,4 @@ main(List<String> args) {
     default:
       print('其他方向');
   }
-
-
-
-
-
-
 } 

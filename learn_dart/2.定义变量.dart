@@ -1,18 +1,19 @@
 import 'dart:io';
 
 main(List<String> args) {
-  //1.明确的声明
+  //1.==============================明确的声明==============================
   String name = 'wfh';
   int age = 18;
   double height = 1.89;
   print('${name},${age},${height}');
 
-  //1.----- 定义的变量可以修改值, 但是不能赋值其他类型
+  //----- 定义的变量可以修改值, 但是不能赋值其他类型
   String content = "hello dart";
   content = "hello world";
+  print(content);
   // content = 111; // 错误的, 将一个int值赋值给一个String变量
 
-  //2.类型推导  var/final/const
+  //2.==============================类型推导  var/final/const==============================
   //----- var的使用
   var name1 = "wfh";
   name1 = "fhwang";
@@ -57,15 +58,17 @@ main(List<String> args) {
   print(time); //2019-11-29 10:20:19.269450
 
   // const放在赋值语句的右边，可以共享对象，提高性能:  
-  final a = const Person();
-  final b = const Person();
+  //在Dart2.0之后, const可以省略
+  final a = const Person("wfh");
+  final b = const Person("wfh");
   print(identical(a,b));  //true
 
-  final m = Person();
-  final n = Person();
+  final m = Person("tmac");
+  final n = Person("tmac");
   print(identical(m, n)); // false
 }
 
 class Person {
-  const Person();
+  final String name;
+  const Person(this.name);
 }

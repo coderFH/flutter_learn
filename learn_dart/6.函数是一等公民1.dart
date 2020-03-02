@@ -18,7 +18,7 @@ foo(String name) {
 
 // 2.将函数作为另外一个函数的参数
 test(Function func) {
-  func('coderwhy');
+  func('coderwfh');
 }
 
 // 3.将函数作为另一个函数的返回值
