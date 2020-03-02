@@ -111,7 +111,7 @@ class MyApp extends StatelessWidget {
           '/checkBox' : (BuildContext context) => MyCheckBoxWidget(),
           '/textField' : (BuildContext context) => MyTextField(),
           '/progress' : (BuildContext context) => MyProgress(),
-          '/fullWidget' : (BuildContext context) => MyCounterWidget(),
+          '/fullWidget' : (BuildContext context) => MyCounterWidget("测试Widget传值"),
           '/rowColumn' : (BuildContext context) => MyRowColumn(),
           '/wrapFlow' : (BuildContext context) => MyWrapTest(),
           '/myStack' : (BuildContext context) => MyStack(),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyCounterWidget extends StatefulWidget {
+  final message;
+  MyCounterWidget(this.message); //比如外界给部件传递过来了一个信息,如何在State里拿到这个信息呢?看45行
+
   @override
   State<StatefulWidget> createState() {
     return MyCounterState();
@@ -38,7 +41,8 @@ class MyCounterState extends State<MyCounterWidget> {
                 ),
               ],
             ),
-            Text("当前计数:$counter",style: TextStyle(fontSize: 30),)
+            Text("当前计数:$counter",style: TextStyle(fontSize: 30),),
+            Text(widget.message) //每个State里都有一个widgt属性,他就是创建这个State的部件
           ],
         ),
       ),
