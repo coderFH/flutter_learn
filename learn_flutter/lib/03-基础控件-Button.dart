@@ -56,6 +56,21 @@ class MyButton2 extends StatelessWidget {
             print("同意协议");
           },
         ),
+        // 5.自定义button: 图标-文字-背景-圆角
+        FlatButton(
+          color: Colors.amberAccent,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8)
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Icon(Icons.favorite, color: Colors.red,),
+              Text("喜欢作者")
+            ],
+          ),
+          onPressed: () {},
+        )
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/00-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.dart';
 import 'package:learn_flutter/35-showDialog.dart';
 import 'package:provider/provider.dart';
 import '01-基础控件-Text.dart';
@@ -174,6 +175,8 @@ class FirstListPage extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          _newListViewItem(context, '生命周期', HYHomeDemo()),
+
           _listViewItem(context,'基础控件-Text','/text'),
           _listViewItem(context,'基础控件-image','/image'),
           _listViewItem(context,'基础控件-button','/button'),

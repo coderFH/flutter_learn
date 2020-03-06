@@ -27,10 +27,11 @@ class MyNetImage extends StatelessWidget {
     return Center(
       child: Container(
         child: Image.network("http://img0.dili360.com/ga/M01/48/3C/wKgBy1kj49qAMVd7ADKmuZ9jug8377.tub.jpg",
-          alignment: Alignment.topCenter,
-          color: Colors.redAccent,
-          repeat: ImageRepeat.repeatY,
+          alignment: Alignment.topCenter, //Alignment(0, 0), 坐标从(-1,-1)到(1,1)
+          color: Colors.redAccent, //这里的color不是真正意义上的红色,是根据colorBlendMode的混入的形式
           colorBlendMode: BlendMode.colorDodge,
+          repeat: ImageRepeat.repeatY,
+          fit: BoxFit.contain,
         ),
         width: 300,
         height: 300,

@@ -24,12 +24,19 @@ class MyTextView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "《定风波》 苏轼 \n莫听穿林打叶声，何妨吟啸且徐行。\n竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
+      /*
+      * 注意:
+      * 1.如果文字很短的时候,虽然设置了居中,但有可能文字并未居中,那是因为Text默认的宽度是包裹文字的,也就是
+      宽度不够,这种情况下要想居中,可以外层包裹一个Row,然后设置主轴居中,
+      * 2.Text是不能设置宽度和高度的
+      * */
       textAlign: TextAlign.center,
       maxLines: 3,
       overflow: TextOverflow.ellipsis,
+      textScaleFactor: 0.5, //缩放因子
       style: TextStyle(
         fontSize: 20,
-        color: Colors.pink
+        color: Colors.red
       ),
     );
   }
