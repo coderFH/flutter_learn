@@ -14,6 +14,7 @@ class MyCon extends StatelessWidget {
           MyContainer1(),
           MyContainer2(),
           MyContainer3(),
+          MyContainer4()
         ],
       ),
     );
@@ -119,7 +120,6 @@ class MyContainer2 extends StatelessWidget {
 
 
 class MyContainer3 extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -146,6 +146,35 @@ class MyContainer3 extends StatelessWidget {
     );
   }
 }
+
+class MyContainer4  extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+//      color: Colors.red,
+      width: 50,
+      height: 50,
+      alignment: Alignment(0, 0),
+      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.all(10),
+      child: Text("Hello World"),
+//      transform: Matrix4.rotationZ(50),
+      decoration: BoxDecoration(
+          color: Colors.red,
+          border: Border.all(
+              width: 5,
+              color: Colors.purple
+          ),
+//        borderRadius: BorderRadius.circular(100),
+          boxShadow: [
+            BoxShadow(color: Colors.orange, offset: Offset(10, 10), spreadRadius: 5, blurRadius: 10),
+            BoxShadow(color: Colors.blue, offset: Offset(-10, 10), spreadRadius: 5, blurRadius: 10),
+          ]
+      ),
+    );
+  }
+}
+
 
 
 

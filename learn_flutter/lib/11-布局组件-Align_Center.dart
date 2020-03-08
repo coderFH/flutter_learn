@@ -7,10 +7,11 @@ class AlignCenter extends StatelessWidget {
       appBar: AppBar(
         title: Text('Align_Center'),
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
           MyAlign(),
           MyCenter(),
+          AlignDemo()
         ],
       ),
     );
@@ -36,6 +37,22 @@ class MyCenter extends StatelessWidget {
       child: Icon(Icons.pets,size:36,color: Colors.red,),
       widthFactor: 3,
       heightFactor: 3,
+    );
+  }
+}
+
+class AlignDemo extends StatelessWidget {
+  const AlignDemo({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+        alignment: Alignment(1, 1),
+        widthFactor: 5,
+        heightFactor: 5,
+        child: Icon(Icons.pets, size: 50)
     );
   }
 }

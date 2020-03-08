@@ -7,10 +7,11 @@ class MyTextField extends StatelessWidget {
       appBar: AppBar(
         title: Text('TextField'),
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
           HomeContent1(),
           FormDemo(),
+          MyTextFieldDemo()
         ],
       ),
     );
@@ -18,6 +19,22 @@ class MyTextField extends StatelessWidget {
 }
 
 //============================== 8.表单 =============================
+
+class HomeContent1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(20),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          TextFieldDemo()
+        ],
+      ),
+    );
+  }
+}
+
 class TextFieldDemo extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -64,20 +81,7 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
   }
 }
 
-class HomeContent1 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          TextFieldDemo()
-        ],
-      ),
-    );
-  }
-}
+
 
 //============================== 9.登录注册案例 =============================
 class FormDemo extends StatefulWidget {
@@ -151,6 +155,71 @@ class _FormDemoState extends State<FormDemo> {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class MyTextFieldDemo extends StatelessWidget {
+
+  final usernameTextEditController = TextEditingController();
+  final passwordTextEditController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Theme(
+      data: ThemeData(
+          primaryColor: Colors.red
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              controller: usernameTextEditController,
+              decoration: InputDecoration(
+                  labelText: "username",
+                  icon: Icon(Icons.people),
+                  hintText: "请输入用户名",
+                  border: InputBorder.none,
+                  filled: true,
+                  fillColor: Colors.red[100]
+              ),
+              onChanged: (value) {
+                print("onChange:$value");
+              },
+              onSubmitted: (value) {
+                print("onSubmitted:$value");
+              },
+            ),
+            SizedBox(height: 10,),
+            TextField(
+              controller: passwordTextEditController,
+              decoration: InputDecoration(
+                labelText: "password",
+                icon: Icon(Icons.lock),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 10,),
+            Container(
+              width: double.infinity,
+              height: 40,
+              child: FlatButton(
+                child: Text("登 录", style: TextStyle(fontSize: 20, color: Colors.white),),
+                color: Colors.blue,
+                onPressed: () {
+                  // 1.获取用户名和密码
+                  final username = usernameTextEditController.text;
+                  final password = passwordTextEditController.text;
+                  print("账号:$username 密码:$password");
+                  usernameTextEditController.text = "";
+                  passwordTextEditController.text = "";
+                },
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

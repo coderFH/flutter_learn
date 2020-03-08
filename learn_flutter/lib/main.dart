@@ -192,6 +192,7 @@ class FirstListPage extends StatelessWidget {
           _listViewItem(context,'容器组件-限定大小', '/size'),
           _listViewItem(context,'容器组件-DecoratedBox', '/decoratedBox'),
           _listViewItem(context,'容器组件-transform', '/transform'),
+          _listViewItem(context,'容器组件-Container', '/container'),
           _listViewItem(context,'容器组件-Clip', '/Clip'),
           _listViewItem(context,'滚动组件-SingleChildScrollView', '/singleChildScrollView'),
           _listViewItem(context,'滚动组件-ListView使用方式1', '/listView1'),
