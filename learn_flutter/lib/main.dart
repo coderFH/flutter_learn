@@ -228,23 +228,23 @@ class FirstListPage extends StatelessWidget {
     );
   }
 
-  Widget _listViewItem(BuildContext context, String name,String routeUrl) {
+  Widget _listViewItem(BuildContext context, String name, String routeUrl) {
     return ListTile(
-      leading: Icon(Icons.access_time,size: 18,),
+      leading: Icon(Icons.access_time, size: 18,),
       title: Text(name),
       trailing: Icon(Icons.arrow_right),
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, routeUrl);
       },
     );
   }
 
-  Widget _newListViewItem(BuildContext context,String name,Object w) {
+  Widget _newListViewItem(BuildContext context, String name, Object w) {
     return ListTile(
-      leading: Icon(Icons.access_time,size: 18,),
+      leading: Icon(Icons.access_time, size: 18,),
       title: Text(name),
       trailing: Icon(Icons.arrow_right),
-      onTap: (){
+      onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) => w));
       },
     );
