@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class MyCustomScrollView extends StatelessWidget {
@@ -53,6 +55,55 @@ class MyCustomScrollView extends StatelessWidget {
                 childCount: 20
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyCustomScrollView1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+//      appBar: AppBar(
+//        title: Text("Slivers Demo"),
+//      ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            expandedHeight: 300,
+            pinned: true, //向上滑动时,悬停
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text("Hello World"),
+              background: Image.asset("images/juren.jpeg", fit: BoxFit.cover,),
+            ),
+          ),
+          SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                childAspectRatio: 2
+            ),
+            delegate: SliverChildBuilderDelegate(
+                    (BuildContext ctx, int int) {
+                  return Container(color: Color.fromARGB(255, Random().nextInt(
+                      256), Random().nextInt(256), Random().nextInt(256)));
+                },
+                childCount: 10
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+                    (BuildContext ctx, int index) {
+                  return ListTile(
+                    leading: Icon(Icons.people),
+                    title: Text("联系人$index"),
+                  );
+                },
+                childCount: 20
+            ),
+          )
         ],
       ),
     );

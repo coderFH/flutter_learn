@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'anchor.dart';
 
+/*
+ListView
+ListView.builder
+ListView.separated
+*/
+
 //============================== 1. ListView常见使用方式1 =============================
 
 class MyListView1 extends StatelessWidget {
@@ -82,38 +88,14 @@ class MyListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body:  ListView(
-      children: <Widget>[
-          ListTile(
-            leading: Icon(Icons.people,size: 36,),
-            title: Text("联系人"),
-            subtitle: Text("联系人信息"),
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-          ListTile(
-            leading: Icon(Icons.people,size: 36,),
-            title: Text("联系人"),
-            subtitle: Text("联系人信息"),
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-          ListTile(
-            leading: Icon(Icons.email,size: 36,),
-            title: Text("邮箱"),
-            subtitle: Text("邮箱地址信息"),
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-          ListTile(
-            leading: Icon(Icons.message,size: 36,),
-            title: Text("消息"),
-            subtitle: Text("消息详情信息"),
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-          ListTile(
-            leading: Icon(Icons.map,size: 36,),
-            title: Text("地址"),
-            subtitle: Text("地址详情信息"),
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-        ],
+        children: List.generate(100, (index){ //使用List.generate快速的造数据
+          return ListTile(
+            leading: Icon(Icons.people),
+            trailing: Icon(Icons.delete),
+            title: Text("联系人${index + 1}"),
+            subtitle: Text("联系人电话号码:18866665555"),
+          );
+        }),
       ),
     );
   }
@@ -126,7 +108,7 @@ class MyScrollDirection extends StatelessWidget {
     return Scaffold(
       body: ListView(
         scrollDirection: Axis.horizontal,
-        itemExtent: 200,
+        itemExtent: 200,//设置横向滚动,需要设置高度
         children: <Widget>[
           Container(color: Colors.redAccent, width: 200,),
           Container(color: Colors.green, width: 200,),
@@ -145,8 +127,8 @@ class MyBuild extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemCount: 100,
-        itemExtent: 80,
+        itemCount: 100, //一共多少个数据
+        itemExtent: 180, //高度
         itemBuilder: (BuildContext context,int index) {
           return ListTile(title: Text("标题$index"),subtitle: Text("详情内容$index"));
         }
@@ -225,8 +207,19 @@ class MySeparatedDemo extends StatelessWidget {
             subtitle: Text("联系人电话${index+1}"),
           );
         },
+
+//        separatorBuilder: (BuildContext context,int index) {
+//          return index % 2 ==0 ? redClolr : blueColor;
+//        },
+
         separatorBuilder: (BuildContext context,int index) {
-          return index % 2 ==0 ? redClolr : blueColor;
+          return Divider(
+            color: Colors.red,
+            height: 100,   //分割先所占的范围
+            indent: 50,   //分割线前边有多少空白
+            endIndent: 50,//分割线后边有多少空白
+            thickness: 1, //分割线的高度
+          );
         },
         itemCount: 100
       ),

@@ -1,18 +1,25 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'anchor.dart';
 
 //============================== 1. GridView-SliverGridDelegateWithFixedCrossAxisCount =============================
 class MyGridCountDemo extends StatelessWidget {
-  List<Widget> getGridWidgets() {
+  List<Widget> getGridWidgets1() {
     return List.generate(100, (index){
       return Container(
         color: Colors.purple,
         alignment: Alignment(0, 0),
         child: Container(
-          width: 10,
-          height: 0,
           color: Colors.red,
-          child: Text("item$index",style: TextStyle(fontSize: 20,color: Colors.white),)),
+          child: Text(
+            "item$index",
+            style: TextStyle(
+                fontSize: 20,
+                color: Color.fromARGB(255, Random().nextInt(256), Random().nextInt(256), Random().nextInt(256))
+            ),
+          )
+        ),
       );
     });
   }
@@ -21,16 +28,16 @@ class MyGridCountDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 82,
+//        height: 82,
         child: GridView(
-          scrollDirection : Axis.horizontal,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 1,
-            mainAxisSpacing: 5,
-            crossAxisSpacing: 0,
-            childAspectRatio: 0.8
+//          scrollDirection : Axis.horizontal,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount( //固定个数
+              crossAxisCount: 3,
+              mainAxisSpacing: 5,
+              crossAxisSpacing: 5,
+              childAspectRatio: 1
           ),
-          children: getGridWidgets(),
+          children: getGridWidgets1(),
         ),
       ),
     );
