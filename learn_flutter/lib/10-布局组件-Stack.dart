@@ -75,10 +75,17 @@ class StackDemo1 extends StatelessWidget {
   }
 }
 
-class StackDemo2 extends StatelessWidget {
+class StackDemo2 extends StatefulWidget {
   const StackDemo2({
     Key key,
   }) : super(key: key);
+
+  @override
+  _StackDemo2State createState() => _StackDemo2State();
+}
+
+class _StackDemo2State extends State<StackDemo2> {
+  bool isFavior = false;
 
   @override
   Widget build(BuildContext context) {
@@ -109,9 +116,13 @@ class StackDemo2 extends StatelessWidget {
                 IconButton(
                   icon: Icon(
                     Icons.favorite,
-                    color: Colors.white,
+                    color: isFavior? Colors.red : Colors.white,
                   ),
-                  onPressed: () => print("点击了收藏"),
+                  onPressed: () {
+                    setState(() {
+                      this.isFavior = !this.isFavior;
+                    });
+                  },
                 )
               ],
             ),
