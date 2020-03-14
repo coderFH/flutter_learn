@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/00-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.dart';
 import 'package:learn_flutter/35-showDialog.dart';
+import 'package:learn_flutter/36-dio%E7%9A%84%E5%B0%81%E8%A3%85.dart';
 import 'package:provider/provider.dart';
 import '01-基础控件-Text.dart';
 import '02-基础控件-Image.dart';
@@ -223,8 +224,8 @@ class FirstListPage extends StatelessWidget {
           _newListViewItem(context, 'maperialapp-tabbar', MyTabbar()),
           _newListViewItem(context, 'maperialapp-tabbar2', MyTabbar1()),
           _newListViewItem(context, 'cupertino_loading', MyLoading()),
-
           _newListViewItem(context, 'showDialog', MyDialog()),
+          _newListViewItem(context, "dio的封装使用", DioDemo())
         ],
       ),
     );
