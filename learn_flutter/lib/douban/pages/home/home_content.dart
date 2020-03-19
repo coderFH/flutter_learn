@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/douban/model/home_model.dart';
+import 'package:learn_flutter/douban/pages/home/home_movie_item.dart';
+import 'package:learn_flutter/douban/service/home_request.dart';
 import 'package:learn_flutter/douban/widgets/dashed_line.dart';
 
 class FHHomeContent extends StatefulWidget {
@@ -7,23 +10,24 @@ class FHHomeContent extends StatefulWidget {
 }
 
 class _FHHomeContentState extends State<FHHomeContent> {
+  final List<MovieItem> moives = [];
+
+  @override
+  void initState() {
+    HomeRequest.requestMovieList(0).then((res){
+      setState(() {
+        moives.addAll(res);
+      });
+    });
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    return Center(
-
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            width: 100,
-            child: FHDashedLine(dashedWidth: 3, dashedHeight: 1,),
-          ),
-          Container(
-            height: 100,
-            child: FHDashedLine(axis: Axis.vertical,dashedWidth: 1,dashedHeight: 3,),
-          ),
-        ],
-      ),
+    return ListView.builder(
+        itemCount: moives.length,
+        itemBuilder: (context,index) {
+          return FHHomeMoviewItem(moives[index]);
+        }
     );
   }
 }
