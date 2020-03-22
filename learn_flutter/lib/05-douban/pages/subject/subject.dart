@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/douban/widgets/star_rating.dart';
+import '../../widgets/star_rating.dart';
 
 class FHSubjectPage extends StatelessWidget {
   @override

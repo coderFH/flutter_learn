@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/douban/model/home_model.dart';
-import 'package:learn_flutter/douban/widgets/dashed_line.dart';
-import 'package:learn_flutter/douban/widgets/star_rating.dart';
+import '../../model/home_model.dart';
+import '../../widgets/dashed_line.dart';
+import '../../widgets/star_rating.dart';
 
 class FHHomeMoviewItem extends StatelessWidget {
   final MovieItem movie;

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/douban/model/home_model.dart';
-import 'package:learn_flutter/douban/pages/home/home_movie_item.dart';
-import 'package:learn_flutter/douban/service/home_request.dart';
-import 'package:learn_flutter/douban/widgets/dashed_line.dart';
+import '../../model/home_model.dart';
+import 'home_movie_item.dart';
+import '../../service/home_request.dart';
 
 class FHHomeContent extends StatefulWidget {
   @override
