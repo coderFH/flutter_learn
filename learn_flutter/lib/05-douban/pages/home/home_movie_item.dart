@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/05-douban/utils/log.dart';
 import '../../model/home_model.dart';
 import '../../widgets/dashed_line.dart';
 import '../../widgets/star_rating.dart';
@@ -98,6 +99,7 @@ class FHHomeMoviewItem extends StatelessWidget {
 
   //2.2.1
   Widget buildContentInfoTitle() {
+    FHLog("aaaaaa", StackTrace.current);
     return Row(
       children: <Widget>[
         Icon(

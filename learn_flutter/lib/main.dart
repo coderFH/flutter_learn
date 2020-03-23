@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:provider/provider.dart';
 import '01-基础组件/00-生命周期.dart';
 import '01-基础组件/01-基础控件-Text.dart';
@@ -39,6 +40,8 @@ import '34-cupertino_loading.dart';
 import '35-showDialog.dart';
 import 'service/36-dio的封装.dart';
 import '05-douban/douban_main.dart';
+import '06-W-E-RO/02-Key的使用.dart';
+import '06-W-E-RO/03-GlobalKey的使用.dart';
 
 /*
 * 运行一个Flutter项目:
@@ -227,7 +230,10 @@ class FirstListPage extends StatelessWidget {
           _newListViewItem(context, 'cupertino_loading', MyLoading()),
           _newListViewItem(context, 'showDialog', MyDialog()),
           _newListViewItem(context, "dio的封装使用", DioDemo()),
-          _newListViewItem(context, "豆瓣案例", DouBan())
+          _newListViewItem(context, "豆瓣案例", DouBan()),
+          _newListViewItem(context, "key的使用", FHKey()),
+          _newListViewItem(context, "GlobalKey的使用", FHGolbalKeyDemo()),
+
         ],
       ),
     );
