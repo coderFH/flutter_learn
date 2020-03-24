@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+
 import '01-基础组件/00-生命周期.dart';
 import '01-基础组件/01-基础控件-Text.dart';
 import '01-基础组件/02-基础控件-Image.dart';
@@ -9,27 +10,41 @@ import '01-基础组件/04-基础控件-CheckBox.dart';
 import '01-基础组件/05-基础控件-TextField.dart';
 import '01-基础组件/06-基础控件-progress.dart';
 import '01-基础组件/07-基础控件-有状态组件.dart';
+
 import '02-布局组件/08-布局组件-Row_Column.dart';
 import '02-布局组件/09-布局组件-Wrap_Flow.dart';
 import '02-布局组件/10-布局组件-Stack.dart';
 import '02-布局组件/11-布局组件-Align_Center.dart';
+
 import '03-容器组件/12-容器组件-Padding.dart';
 import '03-容器组件/13-容器组件-限定大小.dart';
 import '03-容器组件/14-容器组件-DecoratedBox.dart';
 import '03-容器组件/15-容器组件-Transform.dart';
 import '03-容器组件/16-容器组件-Container.dart';
 import '03-容器组件/17-容器组件-Clip.dart';
+
 import '04-可滚动组件/18-可滚动组件-SingleChildScrollView.dart';
 import '04-可滚动组件/19-可滚动组件-ListView.dart';
 import "04-可滚动组件/20-可滚动组件-GridView.dart";
 import '04-可滚动组件/21-可滚动组件-Slivers.dart';
 import '04-可滚动组件/22-可滚动组件-CustomScrollView.dart';
 import '04-可滚动组件/23-可滚动组件-滚动监听.dart';
-import '24-状态管理-Provider.dart';
-import '24-counter.dart';
-import '25-路由-简单的跳转.dart';
-import '26-路由-传递数据.dart';
-import '27-路由-回带数据.dart';
+
+import '05-豆瓣案例/douban_main.dart';
+
+import '06-W-E-RO/02-Key的使用.dart';
+import '06-W-E-RO/03-GlobalKey的使用.dart'
+;
+import '07-网络请求/01-dio的封装.dart';
+
+import '08-状态管理/01-InheritedWidget.dart';
+import '08-状态管理/02-initialize_providers.dart';
+import '08-状态管理/02-ProviderWidget.dart';
+
+import '09-路由/01-路由-简单的跳转.dart';
+import '09-路由/02-路由-传递数据.dart';
+import '09-路由/03-路由-回带数据.dart';
+
 import '28-maperialapp_appbar.dart';
 import '29-maperialapp_bottomnavigationbar.dart';
 import '30-maperialapp_drawer.dart';
@@ -38,10 +53,7 @@ import '32-maperialapp_tabbar.dart';
 import '33-maperialapp_tabbar2.dart';
 import '34-cupertino_loading.dart';
 import '35-showDialog.dart';
-import 'service/36-dio的封装.dart';
-import '05-douban/douban_main.dart';
-import '06-W-E-RO/02-Key的使用.dart';
-import '06-W-E-RO/03-GlobalKey的使用.dart';
+
 
 /*
 * 运行一个Flutter项目:
@@ -117,11 +129,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => Counter(0),
-        ),
-      ],
+      providers: initproviders,
       child: MaterialApp(
         title: 'Flutter学习',
         theme: ThemeData(
@@ -161,7 +169,7 @@ class MyApp extends StatelessWidget {
           '/customScrollView1' : (BuildContext context) => MyCustomScrollView1(),
           '/scrollListen1' : (BuildContext context) => MyHomePage(),
           '/scrollListen2' : (BuildContext context) => MyHomeNotificationDemo(),
-          '/provide' : (BuildContext context) => CartPage(),
+
           '/myrouter' : (BuildContext context) => FirstScreen(),
           '/myProduct' : (BuildContext context) => ProductList(),
           '/myCallPhone' : (BuildContext context) => FirstPage(),
@@ -190,16 +198,19 @@ class FirstListPage extends StatelessWidget {
           _listViewItem(context,'基础控件-textField','/textField'),
           _listViewItem(context,'基础控件-progress','/progress'),
           _listViewItem(context,'基础控件-有状态组件','/fullWidget'),
+
           _listViewItem(context,'布局组件-Row_Column','/rowColumn'),
           _listViewItem(context,'布局组件-wrap_flow','/wrapFlow'),
           _listViewItem(context,'布局组件-Stack','/myStack'),
           _listViewItem(context,'布局组件-Align_Center', '/alignCenter'),
+
           _listViewItem(context,'容器组件-Padding', '/padding'),
           _listViewItem(context,'容器组件-限定大小', '/size'),
           _listViewItem(context,'容器组件-DecoratedBox', '/decoratedBox'),
           _listViewItem(context,'容器组件-transform', '/transform'),
           _listViewItem(context,'容器组件-Container', '/container'),
           _listViewItem(context,'容器组件-Clip', '/Clip'),
+
           _listViewItem(context,'滚动组件-SingleChildScrollView', '/singleChildScrollView'),
           _listViewItem(context,'滚动组件-ListView使用方式1', '/listView1'),
           _listViewItem(context,'滚动组件-ListView使用方式2', '/listView2'),
@@ -208,15 +219,25 @@ class FirstListPage extends StatelessWidget {
           _listViewItem(context,'滚动组件-ListView-ListView.build', '/listBuild'),
           _listViewItem(context,'滚动组件-ListView-ListView.build动态加载数据', '/listBuild1'),
           _listViewItem(context,'滚动组件-ListView- ListView.separated', '/listSeparated'),
-          _listViewItem(context,'可滚动组件-gride1', '/gridView'),
-          _listViewItem(context,'可滚动组件-gride2', '/gridView1'),
-          _listViewItem(context,'可滚动组件-gride.build', '/gridViewBuild'),
-          _listViewItem(context,'可滚动组件-Slivers', '/slivers'),
-          _listViewItem(context,'可滚动组件-CustomScrollView', '/customScrollView'),
-          _listViewItem(context,'可滚动组件-CustomScrollView1', '/customScrollView1'),
-          _listViewItem(context,'可滚动组件-滚动监听', '/scrollListen1'),
-          _listViewItem(context,'可滚动组件-滚动监听-NotificationListener', '/scrollListen2'),
-          _listViewItem(context,'状态管理-provider', '/provide'),
+          _listViewItem(context,'滚动组件-gride1', '/gridView'),
+          _listViewItem(context,'滚动组件-gride2', '/gridView1'),
+          _listViewItem(context,'滚动组件-gride.build', '/gridViewBuild'),
+          _listViewItem(context,'滚动组件-Slivers', '/slivers'),
+          _listViewItem(context,'滚动组件-CustomScrollView', '/customScrollView'),
+          _listViewItem(context,'滚动组件-CustomScrollView1', '/customScrollView1'),
+          _listViewItem(context,'滚动组件-滚动监听', '/scrollListen1'),
+          _listViewItem(context,'滚动组件-滚动监听-NotificationListener', '/scrollListen2'),
+
+          _newListViewItem(context, "豆瓣案例", DouBan()),
+
+          _newListViewItem(context, "key的使用", FHKey()),
+          _newListViewItem(context, "GlobalKey的使用", FHGolbalKeyDemo()),
+
+          _newListViewItem(context, "dio的封装使用", DioDemo()),
+
+          _newListViewItem(context, "状态管理-InheritedWidget", FHInheritedDemo()),
+          _newListViewItem(context, "状态管理-ProvideWidget", FHProviderDomo()),
+
           _listViewItem(context,'路由-简单的跳转', '/myrouter'),
           _listViewItem(context,'路由-数据传递', '/myProduct'),
           _listViewItem(context,'路由-回带数据', '/myCallPhone'),
@@ -229,11 +250,6 @@ class FirstListPage extends StatelessWidget {
           _newListViewItem(context, 'maperialapp-tabbar2', MyTabbar1()),
           _newListViewItem(context, 'cupertino_loading', MyLoading()),
           _newListViewItem(context, 'showDialog', MyDialog()),
-          _newListViewItem(context, "dio的封装使用", DioDemo()),
-          _newListViewItem(context, "豆瓣案例", DouBan()),
-          _newListViewItem(context, "key的使用", FHKey()),
-          _newListViewItem(context, "GlobalKey的使用", FHGolbalKeyDemo()),
-
         ],
       ),
     );

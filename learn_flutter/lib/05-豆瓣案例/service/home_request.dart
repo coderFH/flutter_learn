@@ -1,5 +1,6 @@
-import 'package:learn_flutter/service/config.dart';
-import 'package:learn_flutter/service/http_request.dart';
+import 'package:learn_flutter/07-网络请求/'
+    '/config.dart';
+import 'package:learn_flutter/07-网络请求/http_request.dart';
 
 import '.././model/home_model.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/05-douban/utils/log.dart';
+import '../../utils/log.dart';
 import '../../model/home_model.dart';
 import '../../widgets/dashed_line.dart';
 import '../../widgets/star_rating.dart';
