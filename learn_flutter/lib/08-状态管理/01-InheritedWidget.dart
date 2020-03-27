@@ -12,8 +12,7 @@ class FHCounterdWidget extends InheritedWidget {
   //3.获取组件最近的当前InheritedWidget
   static FHCounterdWidget of(BuildContext context) {
     //沿着Element树,去找到最近的FHCounterElement, 从Element中取出Widget对象
-    //return context.dependOnInheritedWidgetOfExactType(); //最新版本的写法
-    return context.inheritFromWidgetOfExactType(FHCounterdWidget) as FHCounterdWidget;
+    return context.dependOnInheritedWidgetOfExactType(); //最新版本的写法
   }
 
   // 4.决定要不要回调State中的didChangeDependencies

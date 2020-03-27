@@ -70,7 +70,7 @@ class _HYHomeContentState extends State<HYHomeContent> {
   @override
   void initState() {
     // 调用: 这里是必须调用super
-    final TextStyle style = TextStyle();
+    final TextStyle _ = TextStyle();
 
     super.initState();
     print("4.调用_HYHomeContentState的initState方法");

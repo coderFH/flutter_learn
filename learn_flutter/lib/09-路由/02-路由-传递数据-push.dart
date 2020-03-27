@@ -21,7 +21,8 @@ class _ProductListState extends State<ProductList> {
   void initState() { 
     super.initState();
     this.products = List.generate(20, (i){
-      return Product('商品:${i}', '商品详情:${i}');
+      //构建数据
+      return Product('商品:$i', '商品详情:$i');
     });
   }
 
@@ -39,7 +40,7 @@ class _ProductListState extends State<ProductList> {
                 Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder:(context)=>new ProductDetail(product:products[index])
+                    builder:(context) => ProductDetail(product:products[index])
                   )
                 );
               }
@@ -51,6 +52,9 @@ class _ProductListState extends State<ProductList> {
   }
 }
 
+
+
+//=============================  商品详情页 =============================
 class ProductDetail extends StatelessWidget {
   final Product product;
   ProductDetail({Key key ,@required this.product}):super(key:key);

@@ -138,18 +138,20 @@ class FHHomeMoviewItem extends StatelessWidget {
 
   //2.2.2
   Widget buildContentInfoRate() {
-    return Row(
-      children: <Widget>[
-        FHStarRating(
-          rating: movie.rating,
-          size: 20,
-        ),
-        SizedBox(width: 6,),
-        Text(
-          "${movie.rating}",
-          style: TextStyle(fontSize: 16),
-        )
-      ],
+    return FittedBox(
+      child: Row(
+        children: <Widget>[
+          FHStarRating(
+            rating: movie.rating,
+            size: 20,
+          ),
+          SizedBox(width: 6,),
+          Text(
+            "${movie.rating}",
+            style: TextStyle(fontSize: 16),
+          )
+        ],
+      ),
     );
   }
 

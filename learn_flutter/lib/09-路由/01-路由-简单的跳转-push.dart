@@ -7,13 +7,18 @@ class FirstScreen extends StatelessWidget {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('导航页面实例'),
+          title: Text('主页'),
         ),
         body: Center(
           child: RaisedButton(
             child: Text('查看商品详情页面'),
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()));
+//              Navigator.of(context).push(route) 两种写法一直
+              Navigator.push(context, //他本质还是调用上边的那个方法
+                MaterialPageRoute(
+                    builder: (context) => SecondScreen()
+                )
+              );
             },
           ),
         ),
@@ -29,7 +34,7 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('导航页面实例'),
+        title: Text('商品详情页'),
       ),
       body: Center(
         child: RaisedButton(

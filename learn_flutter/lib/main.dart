@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import 'package:provider/provider.dart';
 
 import '01-基础组件/00-生命周期.dart';
@@ -41,9 +42,15 @@ import '08-状态管理/01-InheritedWidget.dart';
 import '08-状态管理/02-initialize_providers.dart';
 import '08-状态管理/02-ProviderWidget.dart';
 
-import '09-路由/01-路由-简单的跳转.dart';
-import '09-路由/02-路由-传递数据.dart';
-import '09-路由/03-路由-回带数据.dart';
+import '09-路由/01-路由-简单的跳转-push.dart';
+import '09-路由/02-路由-传递数据-push.dart';
+import '09-路由/03-路由-回带数据-push.dart';
+import '09-路由/04-路由-命名路由-pushName.dart';
+
+import '10-事件处理/01-pointer_gesture.dart';
+import '10-事件处理/02-gesture手势.dart';
+import '10-事件处理/03-冒泡方式的处理.dart';
+import '10-事件处理/04-event_bus.dart';
 
 import '28-maperialapp_appbar.dart';
 import '29-maperialapp_bottomnavigationbar.dart';
@@ -136,6 +143,8 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.red,
         ),
         routes: {
+          '/': (BuildContext context) => FirstListPage(),
+          '/image' : (BuildContext context) => MyImage(),
           '/text' : (BuildContext context) => MyText(),
           '/image' : (BuildContext context) => MyImage(),
           '/button' : (BuildContext context) => CustomButton(),
@@ -173,8 +182,11 @@ class MyApp extends StatelessWidget {
           '/myrouter' : (BuildContext context) => FirstScreen(),
           '/myProduct' : (BuildContext context) => ProductList(),
           '/myCallPhone' : (BuildContext context) => FirstPage(),
+          '/PushNameDemo' : (BuildContext context) => PushNameDemo(),
         },
-        home: FirstListPage(),
+
+        initialRoute: "/",
+//        home: FirstListPage(), //如果配置了路由信息,这一句可以用上边一句代替
       ),
     );
   }
@@ -238,9 +250,15 @@ class FirstListPage extends StatelessWidget {
           _newListViewItem(context, "状态管理-InheritedWidget", FHInheritedDemo()),
           _newListViewItem(context, "状态管理-ProvideWidget", FHProviderDomo()),
 
+          _newListViewItem(context, "事件处理-pointer_gusture", FHPointGestureDemo()),
+          _newListViewItem(context, "事件处理-Gesture手势", FHGestureDemo()),
+          _newListViewItem(context, "事件处理-冒泡方式的处理", FHBubblingDemo()),
+          _newListViewItem(context, "事件处理-event_bus", FHEventBusDemo()),
+
           _listViewItem(context,'路由-简单的跳转', '/myrouter'),
           _listViewItem(context,'路由-数据传递', '/myProduct'),
           _listViewItem(context,'路由-回带数据', '/myCallPhone'),
+          _listViewItem(context,'路由-命名路由-pushName', '/PushNameDemo'),
 
           _newListViewItem(context, 'maperialapp-appbar', MyappBar()),
           _newListViewItem(context, 'maperialapp_bottomnavigationbar', MybottomNavigationBar()),

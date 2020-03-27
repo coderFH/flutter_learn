@@ -101,7 +101,7 @@ class MyButton extends StatelessWidget {
 
       child: Selector<FHCounterViewModel,FHCounterViewModel>(
         selector: (ctx,counterVM) => counterVM,
-        //最新版本有个参数 shouldRebuild: (prev, next) => false, 要不要重新构建
+        shouldRebuild: (prev, next) => false,//要不要重新构建
         builder: (ctx,counterVM,child) {
         print("RaisedButton build Selector 方法被执行");
         return RaisedButton(
