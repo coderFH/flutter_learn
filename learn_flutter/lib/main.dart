@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:provider/provider.dart';
 
 import '01-基础组件/00-生命周期.dart';
@@ -51,6 +50,13 @@ import '10-事件处理/01-pointer_gesture.dart';
 import '10-事件处理/02-gesture手势.dart';
 import '10-事件处理/03-冒泡方式的处理.dart';
 import '10-事件处理/04-event_bus.dart';
+
+import '11-动画/01-动画-心跳.dart';
+import '11-动画/02-动画-心跳-AnimatedWidget.dart';
+import '11-动画/03-动画-心跳-AnimatedBuilder.dart';
+import '11-动画/04-动画-交织动画.dart';
+import '11-动画/05-动画-路由的跳转动画补充.dart';
+import '11-动画/06-动画-Hero动画.dart';
 
 import '28-maperialapp_appbar.dart';
 import '29-maperialapp_bottomnavigationbar.dart';
@@ -259,6 +265,13 @@ class FirstListPage extends StatelessWidget {
           _listViewItem(context,'路由-数据传递', '/myProduct'),
           _listViewItem(context,'路由-回带数据', '/myCallPhone'),
           _listViewItem(context,'路由-命名路由-pushName', '/PushNameDemo'),
+
+          _newListViewItem(context, "动画-心跳动画", FHHeartDemo()),
+          _newListViewItem(context, "动画-心跳动画-AnimatedWidget", FHHeartDemo1()),
+          _newListViewItem(context, "动画-心跳动画-AnimatedBuilder", FHHeartDemo2()),
+          _newListViewItem(context, "动画-交织动画", FHStaggeredDemo()),
+          _newListViewItem(context, "动画-路由跳转的动画补充", FHAnimalRouter()),
+          _newListViewItem(context, "动画-Hero动画", FHHeroDemo()),
 
           _newListViewItem(context, 'maperialapp-appbar', MyappBar()),
           _newListViewItem(context, 'maperialapp_bottomnavigationbar', MybottomNavigationBar()),
