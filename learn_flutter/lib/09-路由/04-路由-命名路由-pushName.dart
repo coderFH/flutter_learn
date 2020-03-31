@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class PushNameDemo extends StatelessWidget {
@@ -65,7 +67,7 @@ class _FirstPushNameState extends State<FirstPushName> {
               },
             ),
             RaisedButton(
-              child: Text("跳转关于页面-$aboutStr"),
+              child: Text("跳转关于页面(有明确的需要传值)-$aboutStr"),
               onPressed: (){
                 Future result =  Navigator.pushNamed(context,AboutPage.routeName,arguments: '我是传递关于的参数');
                 result.then((res){
@@ -90,11 +92,33 @@ class _FirstPushNameState extends State<FirstPushName> {
 
 
 //======================= 1.测试普通跳转并传递数据 =======================
-class SecondScreen extends StatelessWidget {
+class SecondScreen extends StatefulWidget {
 
   static const String routeName = "/second";
 
   const SecondScreen({Key key}) : super(key: key);
+
+  @override
+  _SecondScreenState createState() => _SecondScreenState();
+}
+
+class _SecondScreenState extends State<SecondScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+
+    //拿到参数的方式也可以通过延时进行拿,如果不延时的话,控件可能还没构建为,可能什么都拿不到
+    Future.delayed(Duration.zero, () {
+      final String message = ModalRoute.of(context).settings.arguments as String;
+      print(message);
+    });
+
+    Timer.run(() {
+      final String message = ModalRoute.of(context).settings.arguments as String;
+      print(message);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

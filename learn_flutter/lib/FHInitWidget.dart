@@ -23,6 +23,12 @@ import '11-动画/03-动画-心跳-AnimatedBuilder.dart';
 import '11-动画/04-动画-交织动画.dart';
 import '11-动画/05-动画-路由的跳转动画补充.dart';
 import '11-动画/06-动画-Hero动画.dart';
+import '11-动画/07-动画-present弹出.dart';
+
+import '12-主题/01-主题的学习.dart';
+import '12-主题/02-暗黑模式适配.dart';
+
+import '13-屏幕适配/01-屏幕适配.dart';
 
 import '00-测试控件/28-maperialapp_appbar.dart';
 import '00-测试控件/29-maperialapp_bottomnavigationbar.dart';
@@ -172,9 +178,30 @@ Widget AnimalWidget(BuildContext context) {
       _newListViewItem(context, "动画-交织动画", FHStaggeredDemo()),
       _newListViewItem(context, "动画-路由跳转的动画补充", FHAnimalRouter()),
       _newListViewItem(context, "动画-Hero动画", FHHeroDemo()),
+      _newListViewItem(context, "动画-present弹出", FHPresentDemo()),
     ],
   );
 }
+
+Widget ThemeWidget(BuildContext context) {
+  return  ExpansionTile(
+    title: Text("12-主题"),
+    children: <Widget>[
+      _newListViewItem(context, '主题的学习', FHThemeDemo()),
+      _newListViewItem(context, '暗黑模式', FHDarkDemo()),
+    ],
+  );
+}
+
+Widget ScreenWidget(BuildContext context) {
+  return  ExpansionTile(
+    title: Text("13-屏幕适配"),
+    children: <Widget>[
+      _newListViewItem(context, '主题的学习', FHScreenFit()),
+    ],
+  );
+}
+
 
 Widget TesstWidget(BuildContext context) {
   return  ExpansionTile(

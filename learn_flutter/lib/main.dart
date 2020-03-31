@@ -115,6 +115,8 @@ class FirstListPage extends StatelessWidget {
           RouterWidget(context),
           EventWidget(context),
           AnimalWidget(context),
+          ThemeWidget(context),
+          ScreenWidget(context),
           TesstWidget(context),
         ],
       ),
