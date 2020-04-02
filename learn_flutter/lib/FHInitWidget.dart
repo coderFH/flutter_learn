@@ -197,7 +197,7 @@ Widget ScreenWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("13-屏幕适配"),
     children: <Widget>[
-      _newListViewItem(context, '主题的学习', FHScreenFit()),
+      _newListViewItem(context, '屏幕适配', FHScreenFit()),
     ],
   );
 }
