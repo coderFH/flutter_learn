@@ -60,4 +60,6 @@ Icon?
 build/
 .android/
 .ios/
+**/.android/
+**/.ios/
 .flutter-plugins
