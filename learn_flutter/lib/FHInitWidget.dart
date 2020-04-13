@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import '01-基础组件/00-生命周期.dart';
 
 import '05-豆瓣案例/douban_main.dart';
@@ -30,6 +31,10 @@ import '12-主题/02-暗黑模式适配.dart';
 
 import '13-屏幕适配/01-屏幕适配.dart';
 
+import '14-国际化/01-App中默认的Widget的国际化.dart';
+import '14-国际化/02-自己的文本也实现本地化.dart';
+import '14-国际化/03-当内容是异步的方式获取时.dart';
+
 import '00-测试控件/28-maperialapp_appbar.dart';
 import '00-测试控件/29-maperialapp_bottomnavigationbar.dart';
 import '00-测试控件/30-maperialapp_drawer.dart';
@@ -40,7 +45,24 @@ import '00-测试控件/34-cupertino_loading.dart';
 import '00-测试控件/35-showDialog.dart';
 import '00-测试控件/01-折叠-ExpansionTitle.dart';
 
-Widget BasicWidget(BuildContext context) {
+Widget testWidget(BuildContext context) {
+  return  ExpansionTile(
+    title: Text("测试组件"),
+    children: <Widget>[
+      _newListViewItem(context, '折叠组件', FHExpansionTileDemo()),
+      _newListViewItem(context, 'maperialapp-appbar', MyappBar()),
+      _newListViewItem(context, 'maperialapp_bottomnavigationbar', MybottomNavigationBar()),
+      _newListViewItem(context, 'maperialapp-drawer', MyDrawer()),
+      _newListViewItem(context, 'maperialapp-scaffold', MyScaffold()),
+      _newListViewItem(context, 'maperialapp-tabbar', MyTabbar()),
+      _newListViewItem(context, 'maperialapp-tabbar2', MyTabbar1()),
+      _newListViewItem(context, 'cupertino_loading', MyLoading()),
+      _newListViewItem(context, 'showDialog', MyDialog()),
+    ],
+  );
+}
+
+Widget basicWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("1-基础组件"),
     children: <Widget>[
@@ -68,7 +90,7 @@ Widget layoutWidget(BuildContext context) {
   );
 }
 
-Widget ContainerWidget(BuildContext context) {
+Widget containerWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("3-容器组件"),
     children: <Widget>[
@@ -82,7 +104,7 @@ Widget ContainerWidget(BuildContext context) {
   );
 }
 
-Widget ScrollableWidget(BuildContext context) {
+Widget scrollableWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("4-可滚动组件"),
     children: <Widget>[
@@ -106,7 +128,7 @@ Widget ScrollableWidget(BuildContext context) {
   );
 }
 
-Widget ProjectWidget(BuildContext context) {
+Widget projectWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("5-项目"),
     children: <Widget>[
@@ -115,7 +137,7 @@ Widget ProjectWidget(BuildContext context) {
   );
 }
 
-Widget BaseStudy(BuildContext context) {
+Widget baseStudy(BuildContext context) {
   return  ExpansionTile(
     title: Text("6-底层探索"),
     children: <Widget>[
@@ -125,7 +147,7 @@ Widget BaseStudy(BuildContext context) {
   );
 }
 
-Widget NetWorkWidget(BuildContext context) {
+Widget netWorkWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("7-网络请求"),
     children: <Widget>[
@@ -134,7 +156,7 @@ Widget NetWorkWidget(BuildContext context) {
   );
 }
 
-Widget StateManageWidget(BuildContext context) {
+Widget stateManageWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("8-状态管理"),
     children: <Widget>[
@@ -144,7 +166,7 @@ Widget StateManageWidget(BuildContext context) {
   );
 }
 
-Widget RouterWidget(BuildContext context) {
+Widget routerWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("9-路由"),
     children: <Widget>[
@@ -156,7 +178,7 @@ Widget RouterWidget(BuildContext context) {
   );
 }
 
-Widget EventWidget(BuildContext context) {
+Widget eventWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("10-事件处理"),
     children: <Widget>[
@@ -168,7 +190,7 @@ Widget EventWidget(BuildContext context) {
   );
 }
 
-Widget AnimalWidget(BuildContext context) {
+Widget animalWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("11-动画"),
     children: <Widget>[
@@ -183,7 +205,7 @@ Widget AnimalWidget(BuildContext context) {
   );
 }
 
-Widget ThemeWidget(BuildContext context) {
+Widget themeWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("12-主题"),
     children: <Widget>[
@@ -193,7 +215,7 @@ Widget ThemeWidget(BuildContext context) {
   );
 }
 
-Widget ScreenWidget(BuildContext context) {
+Widget screenWidget(BuildContext context) {
   return  ExpansionTile(
     title: Text("13-屏幕适配"),
     children: <Widget>[
@@ -203,22 +225,17 @@ Widget ScreenWidget(BuildContext context) {
 }
 
 
-Widget TesstWidget(BuildContext context) {
+Widget i18nWidget(BuildContext context) {
   return  ExpansionTile(
-    title: Text("测试组件"),
+    title: Text("14-国际化"),
     children: <Widget>[
-      _newListViewItem(context, '折叠组件', FHExpansionTileDemo()),
-      _newListViewItem(context, 'maperialapp-appbar', MyappBar()),
-      _newListViewItem(context, 'maperialapp_bottomnavigationbar', MybottomNavigationBar()),
-      _newListViewItem(context, 'maperialapp-drawer', MyDrawer()),
-      _newListViewItem(context, 'maperialapp-scaffold', MyScaffold()),
-      _newListViewItem(context, 'maperialapp-tabbar', MyTabbar()),
-      _newListViewItem(context, 'maperialapp-tabbar2', MyTabbar1()),
-      _newListViewItem(context, 'cupertino_loading', MyLoading()),
-      _newListViewItem(context, 'showDialog', MyDialog()),
+      _newListViewItem(context, '01-App中默认的Widget的国际化', FHI18nSystemWidgetPage()),
+      _newListViewItem(context, '02-自己的文本也实现国际化', FHI18nWidgetPage()),
+      _newListViewItem(context, '02-异步的文本也实现国际化', FHI18nAsyncWidgetPage()),
     ],
   );
 }
+
 
 Widget _listViewItem(BuildContext context, String name, String routeUrl) {
   return ListTile(

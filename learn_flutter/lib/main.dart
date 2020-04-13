@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:learn_flutter/FHRouter.dart';
 
 import 'package:provider/provider.dart';
@@ -6,6 +7,10 @@ import 'package:provider/provider.dart';
 import '08-状态管理/02-initialize_providers.dart';
 
 import 'FHInitWidget.dart';
+
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:learn_flutter/14-国际化/localizations_delegate.dart';
+import 'package:learn_flutter/14-国际化/localizations_delegate_async.dart';
 
 /*
 * 运行一个Flutter项目:
@@ -84,12 +89,31 @@ class MyApp extends StatelessWidget {
       providers: initproviders,
       child: MaterialApp(
         title: 'Flutter学习',
+
         theme: ThemeData(
           primaryColor: Colors.red,
         ),
+
+        // ===================  路由相关begin ======================
         routes: FHRouter.routerList,
         initialRoute: "/",
 //        home: FirstListPage(), //如果配置了路由信息,这一句可以用上边一句代替
+        // ===================  路由相关begin ======================
+
+
+        // ===================  国际化配置相关begin ======================
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,  // 指定本地化的字符串和一些其他的值
+          GlobalCupertinoLocalizations.delegate, // 对应的 cupertino 风格
+          GlobalWidgetsLocalizations.delegate,   // 指定默认的文本排列方向, 由左到右或由右到左
+          FHLocalizationsDelegate.delegate,    // 这个是自己定义的代理,用户实现自己文本的国际化
+          FHAsyncLocalizationsDelegate.delegate
+        ],
+        supportedLocales: [
+          Locale("en"),
+          Locale("zh")
+        ],
+        // ===================  国际化配置相关end ======================
       ),
     );
   }
@@ -104,20 +128,21 @@ class FirstListPage extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          BasicWidget(context),
+          testWidget(context),
+          basicWidget(context),
           layoutWidget(context),
-          ContainerWidget(context),
-          ScrollableWidget(context),
-          ProjectWidget(context),
-          BaseStudy(context),
-          NetWorkWidget(context),
-          StateManageWidget(context),
-          RouterWidget(context),
-          EventWidget(context),
-          AnimalWidget(context),
-          ThemeWidget(context),
-          ScreenWidget(context),
-          TesstWidget(context),
+          containerWidget(context),
+          scrollableWidget(context),
+          projectWidget(context),
+          baseStudy(context),
+          netWorkWidget(context),
+          stateManageWidget(context),
+          routerWidget(context),
+          eventWidget(context),
+          animalWidget(context),
+          themeWidget(context),
+          screenWidget(context),
+          i18nWidget(context),
         ],
       ),
     );
