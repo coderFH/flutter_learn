@@ -48,6 +48,7 @@ class _FHInheritedDemoState extends State<FHInheritedDemo> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        key: ValueKey("buttonKey"),
         child: Icon(Icons.add),
         onPressed: () {
           setState(() {
@@ -103,7 +104,7 @@ class _FHInheritedData2State extends State<FHInheritedData2> {
 
     return Card(
       color: Colors.blue,
-      child: Text("当前计数:$counter"),
+      child: Text("当前计数:$counter",key:ValueKey("textKey"),),
     );
   }
 }

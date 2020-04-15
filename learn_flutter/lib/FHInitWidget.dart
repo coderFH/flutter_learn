@@ -35,6 +35,9 @@ import '14-国际化/01-App中默认的Widget的国际化.dart';
 import '14-国际化/02-自己的文本也实现本地化.dart';
 import '14-国际化/03-当内容是异步的方式获取时.dart';
 
+import '16-混合开发/01-图片选择.dart';
+import '16-混合开发/02-获取电池电量.dart';
+
 import '00-测试控件/28-maperialapp_appbar.dart';
 import '00-测试控件/29-maperialapp_bottomnavigationbar.dart';
 import '00-测试控件/30-maperialapp_drawer.dart';
@@ -231,6 +234,17 @@ Widget i18nWidget(BuildContext context) {
     children: <Widget>[
       _newListViewItem(context, '01-App中默认的Widget的国际化', FHI18nSystemWidgetPage()),
       _newListViewItem(context, '02-自己的文本也实现国际化', FHI18nWidgetPage()),
+      _newListViewItem(context, '02-异步的文本也实现国际化', FHI18nAsyncWidgetPage()),
+    ],
+  );
+}
+
+Widget hybridWidget(BuildContext context) {
+  return  ExpansionTile(
+    title: Text("15-混合开发"),
+    children: <Widget>[
+      _newListViewItem(context, '01-图片选择',FHPickerImage()),
+      _newListViewItem(context, '02-获取电量', FHBatteryInfo()),
       _newListViewItem(context, '02-异步的文本也实现国际化', FHI18nAsyncWidgetPage()),
     ],
   );

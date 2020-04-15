@@ -78,7 +78,7 @@ class HomeContent extends StatelessWidget {
   }
 }
 
-main(List<String> args) {
+main() {
   runApp(MyApp());
 }
 
@@ -143,6 +143,7 @@ class FirstListPage extends StatelessWidget {
           themeWidget(context),
           screenWidget(context),
           i18nWidget(context),
+          hybridWidget(context)
         ],
       ),
     );

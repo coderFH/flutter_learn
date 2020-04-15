@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'size_fit.dart';
-import 'extension/double_extension.dart';
 import 'extension/int_extension.dart';
 
 class FHScreenFit extends StatelessWidget {

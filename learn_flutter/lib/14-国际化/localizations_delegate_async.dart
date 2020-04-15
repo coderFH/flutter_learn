@@ -19,6 +19,6 @@ class FHAsyncLocalizationsDelegate extends LocalizationsDelegate<FHAsyncLocaliza
   Future<FHAsyncLocalizations> load(Locale locale) async {
     final localizations = FHAsyncLocalizations(locale);
     await localizations.loadJson();
-    return Future.value(localizations);
+    return localizations;
   }
 }

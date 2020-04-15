@@ -17,7 +17,7 @@ class FHAsyncLocalizations {
 
   static Map<String, Map<String,String>> _localizedValues = {};
 
-  void loadJson() async {
+  Future loadJson() async {
     //1.加载json文件
     final jsonString = await rootBundle.loadString("assets/i18n.json");
 
