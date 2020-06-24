@@ -1,14 +1,14 @@
-import 'package:favorcate/ui/pages/main/initialize_items.dart';
+import 'initialize_items.dart';
 import 'package:flutter/material.dart';
 
-class HYMainScreen extends StatefulWidget {
+class FHMainScreen extends StatefulWidget {
   static const String routeName = "/";
 
   @override
-  _HYMainScreenState createState() => _HYMainScreenState();
+  _FHMainScreenState createState() => _FHMainScreenState();
 }
 
-class _HYMainScreenState extends State<HYMainScreen> {
+class _FHMainScreenState extends State<FHMainScreen> {
   int _currentIndex = 0;
 
   @override

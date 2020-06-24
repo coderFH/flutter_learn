@@ -1,11 +1,12 @@
-import 'package:favorcate/ui/pages/main/main.dart';
+
+import 'package:catefavor/ui/pages/main/main.dart';
 import 'package:flutter/material.dart';
 
 class FHRouter {
   static final String initialRoute = FHMainScreen.routeName;
 
   static final Map<String, WidgetBuilder> routes = {
-    HYMainScreen.routeName: (ctx) => HYMainScreen()
+    FHMainScreen.routeName: (ctx) => FHMainScreen(),
   };
 
   // 自己扩展
