@@ -1,5 +1,7 @@
 
+import 'package:catefavor/ui/pages/detail/detail.dart';
 import 'package:catefavor/ui/pages/main/main.dart';
+import 'package:catefavor/ui/pages/meal/meal.dart';
 import 'package:flutter/material.dart';
 
 class FHRouter {
@@ -7,6 +9,8 @@ class FHRouter {
 
   static final Map<String, WidgetBuilder> routes = {
     FHMainScreen.routeName: (ctx) => FHMainScreen(),
+    FHMealScreen.routeName: (ctx) => FHMealScreen(),
+    FHDetailScreen.routeName:(ctx) => FHDetailScreen(),
   };
 
   // 自己扩展
