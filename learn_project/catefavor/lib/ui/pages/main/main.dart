@@ -1,3 +1,5 @@
+import 'package:catefavor/ui/pages/home/home_drawer.dart';
+
 import 'initialize_items.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +16,7 @@ class _FHMainScreenState extends State<FHMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: FHHomeDrawer(),
       body: IndexedStack(
         index: _currentIndex,
         children: pages,

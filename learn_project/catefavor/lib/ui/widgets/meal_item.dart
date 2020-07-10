@@ -1,8 +1,10 @@
 import 'package:catefavor/core/model/meal_model.dart';
+import 'package:catefavor/core/viewmodel/favor_view_model.dart';
 import 'package:catefavor/ui/pages/detail/detail.dart';
 import 'package:catefavor/ui/widgets/operation_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../core/extension/int_extension.dart';
 
 final cardRadius = 12.px;
@@ -72,12 +74,24 @@ class FHMealItem extends StatelessWidget {
   }
 
   Widget buildFavorItem() {
-    return GestureDetector(
-      child: FHOperationItem(
-        Icon(Icons.favorite),
-        "未收藏",
-      ),
-      onTap: (){},
+    return Consumer<FHFavorViewModel>(
+      builder: (ctx,favorVM,child) {
+        final iconData = favorVM.isFavor(_meal) ? Icons.favorite: Icons.favorite_border;
+        final favorColor = favorVM.isFavor(_meal) ? Colors.red: Colors.black;
+        final title = favorVM.isFavor(_meal)? "收藏": "未收藏";
+        return GestureDetector(
+          child: GestureDetector(
+            child: FHOperationItem(
+              Icon(iconData,color: favorColor,),
+              title,
+              textColor: favorColor,
+            ),
+            onTap: (){
+              favorVM.handleMeal(_meal);
+            },
+          ),
+        );
+      },
     );
   }
 }

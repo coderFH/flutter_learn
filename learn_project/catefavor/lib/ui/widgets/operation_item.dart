@@ -12,7 +12,7 @@ class FHOperationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 85.px,
+//      width: 90.px,
       padding: EdgeInsets.symmetric(vertical: 12.px),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
